@@ -5,6 +5,7 @@ import edu.hitwh.oremanagementserver.domain.MarketItem;
 import edu.hitwh.oremanagementserver.domain.User;
 import edu.hitwh.oremanagementserver.dto.MarketItemList;
 import edu.hitwh.oremanagementserver.dto.MarketList;
+import edu.hitwh.oremanagementserver.dto.MarketWithItems;
 import edu.hitwh.oremanagementserver.service.MarketService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -30,6 +31,13 @@ public class MarketController {
         User user = (User)request.getSession().getAttribute("user");
         market.setUserId(user.getId());
         return marketService.add(market);
+    }
+
+    @PostMapping("/new")
+    public Result add(@RequestBody MarketWithItems marketWithItems, HttpServletRequest request, HttpServletResponse response){
+        User user = (User)request.getSession().getAttribute("user");
+        marketWithItems.setUserId(user.getId());
+        return marketService.addWithItems(marketWithItems);
     }
 
     @PostMapping("/delete")

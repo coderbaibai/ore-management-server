@@ -4,6 +4,7 @@ import edu.hitwh.oremanagementserver.controller.Result;
 import edu.hitwh.oremanagementserver.domain.Market;
 import edu.hitwh.oremanagementserver.dto.MarketItemList;
 import edu.hitwh.oremanagementserver.dto.MarketList;
+import edu.hitwh.oremanagementserver.dto.MarketWithItems;
 
 import java.util.List;
 
@@ -18,4 +19,6 @@ public interface MarketService {
     Result getUsersMarkets(Long id);
 
     Result getMarketsItems(Long id);
+
+    Result addWithItems(MarketWithItems marketWithItems);
 }

@@ -8,10 +8,20 @@ import lombok.Data;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@TableName("tb_market_item")
-public class MarketItem {
+@TableName("tb_package")
+public class ZipPackage {
     @TableId(type= IdType.AUTO)
     private Long id;
-    private Long marketId;
-    private Long packageId;
+    private String name;
+    private String cls;
+    private String voltage;
+    private String current;
+    private int cnt;
+    private String distribution;
+    private int mainSize;
+    private boolean anomaly;
+    private String anomalyList;
+    private String bucketName;
+    private String path;
+    private Long size;
 }

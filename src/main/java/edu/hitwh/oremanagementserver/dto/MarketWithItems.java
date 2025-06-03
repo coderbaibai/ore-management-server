@@ -1,12 +1,13 @@
 package edu.hitwh.oremanagementserver.dto;
 
 import edu.hitwh.oremanagementserver.domain.MarketItem;
-import edu.hitwh.oremanagementserver.domain.MarketPathItem;
 import lombok.Data;
 
 import java.util.List;
 
 @Data
-public class MarketItemList {
-    private List<MarketPathItem> marketItems;
+public class MarketWithItems {
+    private String marketName;
+    private Long userId;
+    private List<Long> ids;
 }
